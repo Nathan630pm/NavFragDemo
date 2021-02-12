@@ -1,4 +1,4 @@
-package com.nathan630pm.navfragdemo;
+package com.nathan630pm.navfragdemo.fragments;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.nathan630pm.navfragdemo.R;
 
 /**
  * A simple {@link Fragment} subclass.
