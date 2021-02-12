@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private NavHostFragment navHostFragment;
     private NavController nav;
 
+    private AppBarConfiguration appBarConfiguration;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +28,11 @@ public class MainActivity extends AppCompatActivity {
         navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
 
         nav = Navigation.findNavController(this, R.id.fragment);
+
+        appBarConfiguration = new AppBarConfiguration.Builder(R.id.homeFragment, R.id.profileFragment, R.id.settingsFragment).build();
         NavigationUI.setupWithNavController(bottomNavigationView, nav);
+
+        NavigationUI.setupActionBarWithNavController(this, nav, appBarConfiguration);
 
     }
 }
